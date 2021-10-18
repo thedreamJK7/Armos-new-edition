@@ -3,6 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="" name="keywords" />
+        <meta content="" name="author" />
+
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script src="assets/js/pace.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-bez@1.0.11/src/jquery.bez.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
 
         <!--==================== UNICONS ====================-->
         
@@ -11,14 +19,25 @@
         <link rel="stylesheet" href="">
         
         <!--==================== CSS ====================-->
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="assets/css/loader.css">
+        <link rel="stylesheet" href="assets/css/style.css">
 
-        <title>Responsive Portfolio Website</title>
+        <title>ARMOS</title>
     </head>
     <body>
+        <!--==================== LOADER ====================-->
+        <div class="loader" id="loader">
+            <h1 class="title">ARMOS</h1>
+
+            <div id="preloader">
+                <div class="p">LOADING</div>
+            </div>
+        </div>
+
         <!--==================== HEADER ====================-->
         <header class="header" id="header">
-            
+            <h2>Armos</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe modi numquam nostrum obcaecati libero facere. Sit eius, consectetur vel quo qui esse, veritatis eum non in velit harum, ab assumenda quibusdam dolorum veniam molestiae eveniet quia vitae laudantium accusamus illum doloribus. Veritatis, praesentium dolorem accusamus quaerat nihil reiciendis consequuntur voluptatibus non rerum eaque facere enim neque numquam asperiores molestias amet veniam placeat ipsum deleniti nostrum minus pariatur. Fugiat est architecto voluptatum, aliquid deleniti officia accusantium animi. Quam nam dolorum placeat, debitis modi quisquam sequi consequatur autem nobis excepturi. Maiores recusandae iste soluta quisquam, unde sapiente id excepturi mollitia? Amet repudiandae sit autem quia asperiores! Quo officiis modi perferendis maiores, commodi veritatis quas, cum, assumenda delectus adipisci doloremque repudiandae quasi consequatur harum ipsam? Laudantium quos ad ab assumenda doloremque neque nemo tempore praesentium ut aut! Iure est nulla veritatis provident praesentium. Sit, ullam excepturi. Quaerat illo quisquam eum aut? Totam ipsum quos voluptate ut blanditiis suscipit inventore sequi laborum optio omnis, asperiores quis alias tenetur iusto sit odit numquam impedit excepturi tempora facere! Ipsa maxime non enim maiores, similique illo labore sunt fugit, repellendus eius et officia laborum assumenda sapiente esse voluptatibus ut neque nam veritatis ad quod facilis nostrum? Id?</p>
         </header>
 
         <!--==================== MAIN ====================-->
@@ -82,7 +101,36 @@
 
             
         </footer>
+        <!--==================== LOADER JS ====================-->
+        <script>
+
+            paceOptions = {
+            ajax: true,
+            document: true,
+            eventLag: false
+            };
+    
+            Pace.on('done', function() {
+            $('.p').delay(500).animate({top: '30%', opacity: '0'}, 3000, $.bez([0.19,1,0.22,1]));
+    
+    
+            $('#preloader').delay(1500).animate({top: '-100%'}, 2000, $.bez([0.19,1,0.22,1]));
+                
+            TweenMax.from(".title", 2, {
+                 delay: 1.8,
+                      y: 10,
+                      opacity: 0,
+                      ease: Expo.easeInOut
+                })
+            });
+    
+        </script>
+        <!--==================== JQUERY ====================-->
+        <script src="assets/js/jquery.js"></script>
         
+        <!--==================== LOADER MINI ====================-->
+        <script src="assets/js/loader.js"></script>
+
         <!--==================== SCROLL TOP ====================-->
         
 
@@ -90,6 +138,6 @@
         <script src=""></script>
 
         <!--==================== MAIN JS ====================-->
-        <script src=""></script>
+        <script src="assets/js/main.js"></script>
     </body>
 </html>
