@@ -194,7 +194,7 @@ img {
 .nav_open {
     font-size: 20px;
     transition: .3s;
-    font-weight: 300;
+    font-weight: 400;
     cursor: pointer;
 }
 .nav_open:hover {
@@ -205,21 +205,21 @@ img {
     .nav_menu {
         position: fixed;
         top: 0;
-        right: 0;
+        right: -100%;
         height: 100vh;
         width: 287px;
         background: #fff;
         overflow: hidden;
         z-index: 1000;
+        padding: 40px 20px 40px 40px;
+        transition: .5s;
     }
-}
-
-.nav_list {
-    padding: 40px 20px 40px 40px;
 }
 
 .nav_item {
     padding: 10.4px 25px 10.4px 0;
+    transition: .3s;
+    cursor: pointer;
 }
 
 .nav_item a {
@@ -234,10 +234,9 @@ img {
     font-size: 16px;
     line-height: 20px;
     font-family: "Mulish", Helvetica, Arial, Verdana, sans-serif;
-    transition: .3s;
 }
 
-.nav_item a:hover {
+.nav_item:hover a {
     color: var(--first-color);
 }
 
@@ -247,9 +246,10 @@ img {
     height: 100vh;
     top: 0;
     left: 0;
-    z-index: 999;
+    z-index: -1;
     background-color: rgba(17,17,17,.5);
-    transition: .3s;
+    transition: .5s;
+    opacity: 0;
 }
 
 .nav_close {
@@ -263,8 +263,54 @@ img {
     font-weight: 300;
 }
 
-/* show menu */
+.nav_number span {
+    display: inline-block;
+    font: 600 15px/18px "Mulish",Helvetica,Arial,Verdana,sans-serif;
+    color: var(--title-color);
+    margin: 5px 20px 5px 0;
+}
 
+.nav_info {
+    padding: 25px 0;
+}
+
+.nav_info_social {
+    display: flex;
+    align-items: center;
+    margin: 5px 20px 5px 0;
+}
+
+.nav_info_social_icon:first-child {
+    margin-left: 0;
+}
+
+.nav_info_social_icon {
+    width: 24px;
+    height: 24px;
+    margin: 0 3px;
+    line-height: 24px;
+    border-radius: 2px;
+    background: var(--first-color);
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.nav_info_social_icon:hover {
+    color: var(--text-color-light);
+    background: var(--first-color-second);
+}
+
+/* show menu */
+.nav_bg.show_menu {
+    opacity: 1;
+    z-index: 999;
+}
+
+.nav_menu.show_menu {
+    right: 0;
+}
 
 /* Active link */
 
